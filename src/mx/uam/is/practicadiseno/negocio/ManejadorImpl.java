@@ -41,9 +41,13 @@ public class ManejadorImpl implements Manejador {
 	 */
 	public boolean agrega(String dato) {
 	
-		boolean c= mapeador.agrega(dato);
-		notifica();
-		return c;
+		if(mapeador.agrega(dato)) {
+			notifica();
+			
+			return true;
+		}
+		
+		return false;
 	}
 
 	/**
@@ -63,7 +67,7 @@ public class ManejadorImpl implements Manejador {
 	 *
 	 */
 	public void finaliza(Observador o) {
-		if(observadores.isEmpty())
+		if(observadores.isEmpty()) 	
 			System.exit(0);
 	}
 
@@ -73,9 +77,8 @@ public class ManejadorImpl implements Manejador {
 	@Override
 	public boolean agregaObservador(Observador o) {
 		// agregar un observador a la lista de observadores
-		boolean c=observadores.add(o);
-		notifica();
-		return c;
+		
+		return observadores.add(o);
 	}
 
 	/**

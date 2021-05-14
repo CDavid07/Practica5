@@ -17,13 +17,14 @@ public class ManejadorProxy implements Manejador {
 	@Override
 	public boolean agrega(String dato) {
 		// TODO Auto-generated method stub
+		 System.out.println("Se invocó el método agrega(dato)");
 		return manejador.agrega(dato);
 	}
 
 	@Override
 	public boolean borra(String dato) {
 		// TODO Auto-generated method stub
-		
+		 System.out.println("Se invocó el método borra(dato)");
 		return manejador.borra(dato);
 	}
 
